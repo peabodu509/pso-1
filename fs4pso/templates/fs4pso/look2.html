@@ -49,19 +49,23 @@
 
                 {% for post in posts %}
                     <div class="view_feedback" style="border: 1px solid; border-radius: 4px; border-color: #595959; margin:10px">  <!--이곳은 피드백 보는 공간-->
-                            <img src="https://postfiles.pstatic.net/MjAxODA2MTNfMSAg/MDAxNTI4ODczOTE1NDM4.ymRw_wLbMBIeZPaNgUnmdkrEEYgIDNa1xJVcNdlxXlIg.R8GVj8qNJn6bRcv85mM5p0PPiWx-i0LJJEHOM3jVOogg.JPEG.zzangbrain2/1.jpg?type=w580" class="rounded-circle" width="100" height="100" style="padding:10px; float: left;">
-                            <p style="font-size: 30px; padding-left: 120px; padding-top: 10px">{{post.subject}}</p>
-                            <p style="padding-left: 120px;">{{post.name}}    ㅣ    {{post.created_date}}</p>
-                            <br>
-                            <hr>
-                            <p style="padding-left: 10px;">{{post.good_points}}</p>
-                            <hr>
-                            <p style="padding-left: 10px;">{{post.improving_points}}</p>
-                            <hr>
-                            <p style="padding-left: 10px;">{{post.another_points}}</p>
-                    </div>
-                    <hr>
-                    <div class="likes" style="margin-left:10px;"> <!--이곳은 좋아요 공간-->
+                             <img src="https://postfiles.pstatic.net/MjAxODA2MTNfMSAg/MDAxNTI4ODczOTE1NDM4.ymRw_wLbMBIeZPaNgUnmdkrEEYgIDNa1xJVcNdlxXlIg.R8GVj8qNJn6bRcv85mM5p0PPiWx-i0LJJEHOM3jVOogg.JPEG.zzangbrain2/1.jpg?type=w580" class="rounded-circle" width="100" height="100" style="padding:10px; float: left;">
+                             <p style="font-size: 30px; padding-left: 120px; padding-top: 10px">{{post.subject}}</p>
+                             <p style="padding-left: 120px;">작성자: {{post.name}}    ㅣ    {{post.created_date}}</p>
+                             <p style="padding-left: 120px;">{{post.name}}    ㅣ    {{post.created_date}}</p>
+                             <br>
+                             <hr>
+                             <p style="padding-left: 10px;">좋았던 점: {{post.good_points}}</p>
+                             <p style="padding-left: 10px;">{{post.good_points}}</p>
+                             <hr>
+                             <p style="padding-left: 10px;">아쉬웠던 점: {{post.improving_points}}</p>
+                             <p style="padding-left: 10px;">{{post.improving_points}}</p>
+                             <hr>
+                             <p style="padding-left: 10px;">제안할 점: {{post.another_points}}</p>
+                             <p style="padding-left: 10px;">{{post.another_points}}</p>
+                     </div>
+                     <hr>
+                     <div class="likes" style="margin-left:10px;"> <!--이곳은 좋아요 공간-->
                             <a href="/likes/{{post.id}}/"><button type="submit" class="btn btn-outline-dark" value="{{post.num_of_likes}}"><input type="image" src="https://postfiles.pstatic.net/MjAxODA2MTNfMTY5/MDAxNTI4ODczOTE5NzU3.pSBTUUaA9RyUQQ-WKFal_uqr-D-jtChXPPkyiwRh0qUg.Ir0gucLZLn4G8YjJ4UrJbHV2DXEweIXRQguU1qQ-2nwg.PNG.zzangbrain2/2.png?type=w580" height="60"> 좋아요</button></a>
                         <br>
                         <br>
