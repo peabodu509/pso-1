@@ -15,7 +15,7 @@ class Subject(models.Model):
 		return self.subject.encode('utf-8')
 
 class Post(models.Model):
-	subject = models.ForeignKey('fs4pso.Subject', default=1)
+	subject = models.ForeignKey('fs4pso.Subject', default=1, on_delete=models.CASCADE )
 	name = models.CharField(max_length=10, verbose_name='작성자', default=' ')
 	good_points = models.TextField(verbose_name='좋았던 점', default=' ')
 	improving_points = models.TextField(verbose_name='개선되었으면 하는 점', default=' ')
@@ -31,7 +31,7 @@ class Post(models.Model):
 		return self.name.encode('utf-8')
 
 class Comment(models.Model):
-	post = models.ForeignKey('fs4pso.Post', related_name='comments', default=1)
+	post = models.ForeignKey('fs4pso.Post', related_name='comments', default=1, on_delete=models.CASCADE)
 	name = models.CharField(verbose_name='댓글 작성자', max_length=10, default=' ')
 	text = models.TextField(verbose_name='댓글', default=' ')
 	created_date = models.DateTimeField(auto_now=True)
