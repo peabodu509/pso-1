@@ -7,6 +7,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from .models import Post, Subject, Comment
 
 def write(request):
+#    if request.mothod == "POST":
+#        form = PostForm(request.POST)
+#        if form.is_valid():
+
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     return render(request, 'fs4pso/write.html', {'subjects': subjects})
 
@@ -14,29 +18,6 @@ def main_subject(request):
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
     return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
-
-def korean(request):
-    subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    posts = Post.objects.filter(created_date__lte=timezone.now(),subject = 1).order_by('created_date').reverse()
-    return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
-
-def math(request):
-    subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    posts = Post.objects.filter(created_date__lte=timezone.now(), subject = 2).order_by('created_date').reverse()
-    return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
-
-def eng(request):
-    subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    posts = Post.objects.filter(created_date__lte=timezone.now(), subject = 3).order_by('created_date').reverse()
-    return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
-
-def pso(request):
-    subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    posts = Post.objects.filter(created_date__lte=timezone.now(), subject = 4).order_by('created_date').reverse()
-    return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
-#    posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
-#    return render(request, 'fs4pso/main.html', {'posts': posts})
-
 
 #def main_post(request):
 #    posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
@@ -57,6 +38,7 @@ def signup(request):
 def looks(request, post_id):
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     posts = Post.objects.filter(id = post_id)
+#    comments = Comment.objects.filter()
     return render(request, 'fs4pso/look2.html', {'posts' : posts, 'subjects': subjects})
 
 def likes(request, post_id):

@@ -10,12 +10,13 @@
 </head>
 <body style="padding-top: 70px">
 <!-- Main Container -->
-	<div class="container">
+	<div class="container"> 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="/">FS4PSO</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
          <nav class="collapse navbar-collapse" id="navbarSupportedContent1">
             <ul class="navbar-nav mr-auto">
                <li class="nav-item active"> <a class="nav-link" href="">글쓰기 <span class="sr-only">(current)</span></a> </li> 
+               <li class="nav-item"> <a class="nav-link" href="#">타임라인</a> </li>
                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">과목</a>
                   	<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                   		<!-- 이 부분에서 과목을 골랐을 때 해당 과목의 페이지로 이동하도록 설정해야함 -->
@@ -34,9 +35,8 @@
           </nav>
       </nav>
 <!-- Stats Gallery Section -->
-
+		
 		<div class="gallery">
-			<form action="models.py" method="post">
 				<div class="form-group col-md-3">
 					<label>이름</label>
 					<textarea class="form-control" rows="1"></textarea>
@@ -48,7 +48,7 @@
 						<option selected>선택...</option>
 						<!-- 이 부분에서 과목 설정한 부분이 D.B.에 저장되도록 다른 변수를 사용하거나 특수적인 조정이 필요함 -->
 						{% for subject in subjects %}
-							<option>{{ subject.subject }}</option>
+							<option>{{ subject }}</option>
 						{% endfor %}
 					</select>
 				</div>
@@ -67,10 +67,9 @@
   				</div>
 				<hr>
 				<!-- 아래 부분에서 제출 버튼 눌렀을 때 post 정보가 D.B.에 저장되고 post 정보를 자세하게 보는 look/id 페이지로 연결되도록 설정해야함 -->
-				<form action = "/look/{{post.id}}" method="post">
+				<form method="POST" action = "/look/{{post.id}}" >
 					<button type="submit" class="btn btn-primary" value="{{post.id}}" style="margin-bottom: 1em">제출</button>
 				</form>
-            </form>
 	  </div>
 <!-- Copyrights Section -->
 		<div class="modal-footer">(C) PSO - 김민영, 김정석, 김태윤, 노현기, 선재헌, 이동현, 이민준</div>
