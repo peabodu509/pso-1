@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	  <title>Fs4pso | Terms of Use</title>
+	     <meta charset="utf-8">
+	      <meta name="viewport" content="width=device-width, initial-scale=1">
+	      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	      <style>
+	        body {
+	               background-color: #ffffff;
+	               }
+	        #main{
+	               background-color: #ffffff;
+	               margin-top: 100px;
+	               margin-bottom: 00px;
+	               margin-right: 00px;
+	               margin-left: 00px;
+	               border-style: solid;
+	               border-width: 3px;
+	               padding-top: 30px;
+	               padding-right: 50px;
+	               padding-bottom: 30px;
+	               padding-left: 50px;
+	               }
+	         #www{
+	        	   background-color: #ffffff;
+	               margin-top: 10px;
+	               margin-bottom: 00px;
+	               margin-right: 00px;
+	               margin-left: 00px;
+	               border-style: solid;
+	               border-width: 3px;
+	               padding-top: 10px;
+	               padding-right: 20px;
+	               padding-bottom: 10px;
+	               padding-left: 20px;
+		     	   }
+
+	      </style>
+	</head>
+  <body>
+  	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="/">FS4PSO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <nav class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active"> <a class="nav-link" href="/write"> 글쓰기 <span class="sr-only">(current)</span></a> </li> 
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 과목 </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    {% for subject in subjects %}
+                      <a class="dropdown-item" href="#">{{ subject.subject }}</a>
+                    {% endfor %}
+                  </div>
+               </li>
+            </ul>
+         <div class="form-inline my-2 my-lg-0">
+            <a href=""><button class="btn btn-secondary my-2 my-sm-0" type="submit"> 로그인 </button></a>
+         </div>
+         <div class="form-inline my-2 my-lg-0">
+            <a href="/signup"><button class="btn btn-secondary my-2 my-sm-0" type="submit"> 회원가입 </button></a>
+         </div>
+         </nav>
+   </nav>
+
+	<div class="container">
+	  <div class="row">
+	    <div class="col-sm-3">
+	    </div>
+	    <div class="col-sm-6" id="main">
+	      <div class="text-center">
+	        <h3> Fs4pso 이용약관 </h3>
+	      </div>
+	      <h4>[이용약관]</h4>
+		  <div id="www">
+			<p>제1조 (목적)이 약관은 프로그래밍 소모임에서 운영하는 "이우학교 웹사이트"에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 학교와 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+			<p>제2조 (약관의 효력과 변경)이 약관은 홈페이지에 게시하여 공시함으로써 효력을 발생합니다. 소모임의 합리적인 사유가 발생한 경우에는 이 약관을 변경할 수 있으며, 약관을 변경한 경우에는 지체 없이 "공지사항"을 통해 공시합니다. 또한 이용자는 변경된 약관사항에 동의하지 않으면, 언제나 서비스 이용을 중단하고 이용계약을 해지할 수 있습니다.</p>
+			<p>제3조 (회원가입) 1.이용자는 "본 웹사이트"가 정한 가입 양식에 따라 회원정보를 기입한 후 이 약관에 동의한다는 의사표시를 함으로서 회원가입을 신청합니다.
+			2."본 웹사이트"는 제1항과 같이 회원으로 가입할 것을 신청한 이용자 중 이전에 회원자격을 상실한 적이 있는 경우 ("본 웹사이트"의 회원 재가입 승낙을 얻은 경우에는 예외)나 등록 내용에 허위, 기재누락, 오기가 있는 경우 및 기타 회원으로 등록하는 것이 "본 웹사이트"의 기술상 현저히 지장이 있다고 판단되는 경우에 해당하지 않는 한 회원으로 등록합니다.</p>
+			<p>제4조 (이용 제한)다음 각 호의 1에 해당하는 경우에는 회원 아이디와 비밀번호를 삭제할 수 있습니다.
+			1.허위로 가입 신청한 경우
+			2.본인의 실명으로 가입하지 않은 경우
+			3.타인의 아이디와 비밀번호를 도용한 경우
+			4.서비스 운영을 고의로 방해하는 경우</p>
+			<p>제5조 (회원탈퇴)회원은 언제든지 회원탈퇴를 할 수 있으며, 탈퇴를 원하시는 경우 회원탈퇴 메뉴에서 탈퇴신청을 하시면 됩니다.</p>
+			<p>제6조 (이용자 게시물의 삭제 및 서비스 이용 제한)프로그래밍 소모임은 서비스용 설비의 용량에 여유가 없다고 판단되는 경우 이용자 의 서비스 이용을 부분적으로 제한 또는 등록한 내용물의 변형 및 삭제를 할 수 있습니다. 이에 해당하는 상황에서는 해당 이용자에게 해당 내용을 사전에 통보 합니다.</p>
+			<p>제7조 ("피드백 사이트"의 의무)" 피드백 사이트"는 법령과 이 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며 이 약관이 정하는 바에 따라 지속적이고, 안정적으로 서비스를 제공하는데 최선을 다하여야 합니다.</p>
+			<p>제8조 (재판권 및 준거법)"학교 웹사이트"와 이용자 간에 발생한 모든 분쟁에 관한 소송은 민사소송법상의 관할법원에 제기 합니다.</p>
+	    <div class="form-group form-check">
+	      <label class="form-check-label">
+	        <input class="form-check-input" type="checkbox" name="remember"> 동의
+	      </label>
+	    </div>
+	    <br>
+	    <button type="submit" class="btn btn-dark btn-block" href="http://localhost:8000/signup/"> 다음 </button>
+	  	<div class="col-sm-3">
+	    </div>
+	   	</div>
+  </body>
+</html>

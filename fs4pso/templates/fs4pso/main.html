@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+  <title>Fs4pso | main page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="/">FS4PSO</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+         <nav class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active"> <a class="nav-link" href="write/"> 글쓰기 <span class="sr-only">(current)</span></a> </li>
+               <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 과목 </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    {% for subject in subjects %}
+                      <a class="dropdown-item" href=/{{ subject.subject }}>{{ subject.subject }}</a>
+                    {% endfor %}
+                 </li>
+            </ul>
+         <div class="form-inline my-2 my-lg-0">
+            <a href="login/"><button class="btn btn-secondary my-2 my-sm-0" type="submit"> 로그인 </button></a>
+         </div>
+         <div class="form-inline my-2 my-lg-0">
+            <a href="signup/"><button class="btn btn-secondary my-2 my-sm-0" type="submit"> 회원가입 </button></a>
+         </div>
+          </nav>
+      </nav>
+
+<div class="row" style="margin-top: 80px;">
+  <div class="col-sm-3"></div> <!-- 화면의 왼쪽 공백, 추후에 광고로 채울 수 있음 !-->
+  <div class="col-sm-6"> <!-- 화면의 중앙( 피드백 글들을 import해서 보여줌 ), 추후에 block content로 대체 !-->
+    {% for post in posts %}
+        <div class="post">
+            <h1>{{ post }}</h1>
+            <p>{{ post.subject|linebreaksbr }}</p>
+            <p>{{ post.good_points|linebreaksbr }}</p>
+            <p>{{ post.improving_points|linebreaksbr }}</p>
+            <p>{{ post.another_points }}</p><a href="look/{{post.id}}/"> ...더보기 </a>
+            <div class="date">
+                {{ post.created_date }}
+            </div>
+            <p>{{ post.num_of_likes }}</p>
+        </div>
+    {% endfor %}
+  </div>
+  <div class="col-sm-3"></div> <!-- 화면의 오른쪽 공백, 추후에 광고로 채울 수 있음 !-->
+</div>
+
+</body>
+</html>
