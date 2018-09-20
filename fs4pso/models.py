@@ -12,7 +12,7 @@ class Subject(models.Model):
 		self.save()
 	
 	def __str__(self):
-		return self.subject
+		return self.subject.encode('utf-8')
 
 class Post(models.Model):
 	subject = models.ForeignKey('fs4pso.Subject', default=1)
@@ -28,7 +28,7 @@ class Post(models.Model):
 		self.save()
 
 	def __str__(self):
-		return self.name
+		return self.name.encode('utf-8')
 
 class Comment(models.Model):
 	post = models.ForeignKey('fs4pso.Post', related_name='comments', default=1)
@@ -37,4 +37,4 @@ class Comment(models.Model):
 	created_date = models.DateTimeField(auto_now=True)
 
 	def __str__(self):
-		return self.text
+		return self.text.encode('utf-8')
