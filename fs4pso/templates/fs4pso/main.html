@@ -24,7 +24,7 @@
                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 과목 </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                     {% for subject in subjects %}
-                      <a class="dropdown-item" href="#">{{ subject.subject }}</a>
+                      <a class="dropdown-item" href="/{{ subject.subject }}">{{ subject.subject }}</a>
                     {% endfor %}
                  </li>
             </ul>
