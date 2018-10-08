@@ -36,7 +36,7 @@
 <!-- Stats Gallery Section -->
 
 		<div class="gallery">
-			<form action="models.py" method="post">
+			<form method="POST" class="post-form">{% csrf_token %}
 				<div class="form-group col-md-3">
 					<label>이름</label>
 					<textarea class="form-control" rows="1"></textarea>
@@ -46,7 +46,6 @@
 					<label>과목</label>
 					<select class="form-control">
 						<option selected>선택...</option>
-						<!-- 이 부분에서 과목 설정한 부분이 D.B.에 저장되도록 다른 변수를 사용하거나 특수적인 조정이 필요함 -->
 						{% for subject in subjects %}
 							<option>{{ subject.subject }}</option>
 						{% endfor %}
@@ -66,11 +65,7 @@
 					<textarea class="form-control" rows="5"></textarea>
   				</div>
 				<hr>
-				<!-- 아래 부분에서 제출 버튼 눌렀을 때 post 정보가 D.B.에 저장되고 post 정보를 자세하게 보는 look/id 페이지로 연결되도록 설정해야함 -->
-				<form action = "/look/{{post.id}}" method="post">
-					<button type="submit" class="btn btn-primary" value="{{post.id}}" style="margin-bottom: 1em">제출</button>
-				</form>
-            </form>
+					<button type="submit" class="save btn btn-primary" style="margin-bottom: 1em">제출</button>
 	  </div>
 <!-- Copyrights Section -->
 		<div class="modal-footer">(C) PSO - 김민영, 김정석, 김태윤, 노현기, 선재헌, 이동현, 이민준</div>
