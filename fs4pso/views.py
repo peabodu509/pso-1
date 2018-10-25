@@ -29,11 +29,6 @@ def main_subject(request):
     posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
     return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
 
-def subject(request, subject_id):
-    subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    posts = Post.objects.filter(created_date__lte=timezone.now(), subject = subject_id).order_by('created_date').reverse()
-    return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
-
 #def main_post(request):
 #    posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
 #    return render(request, 'fs4pso/main_block_content.html', {'posts': posts})

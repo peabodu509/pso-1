@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^write/$', views.write, name='write'),
-    url(r'^subject/(?P<subject_id>\d+)$', views.subject, name='subject'),
 #    url(r'^$', views.main_post, name='main_post'),
     url(r'^$', views.main_subject, name='main_subject'),
     url(r'^login/$', views.login, name='login'),
