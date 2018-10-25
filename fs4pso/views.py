@@ -22,12 +22,17 @@ def write(request):
     else:
         form = PostForm()
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    return render(request, 'fs4pso/write.html', {'form': form})
+    return render(request, 'fs4pso/write.html', {'form': form, 'subjects': subjects})
 
 def main_subject(request):
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
     return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
+
+def subject(request, subject_id):
+     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
+     posts = Post.objects.filter(created_date__lte=timezone.now(), subject = subject_id).order_by('created_date').reverse()
+     return render(request, 'fs4pso/main.html', {'subjects': subjects, 'posts': posts})
 
 #def main_post(request):
 #    posts = Post.objects.filter(created_date__lte=timezone.now()).order_by('created_date').reverse()
