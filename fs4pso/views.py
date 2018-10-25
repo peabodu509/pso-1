@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django import forms
 from .forms import PostForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Post, Subject, Comment
@@ -11,17 +11,18 @@ def write(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.name = request.name
+            '''post.name = request.name
+            post.subject = request.subject
             post.good_points = request.good_points
             post.improving_points = request.improving_points
-            post.another_points = request.another_points
+            post.another_points = request.another_points'''
             post.creaed_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('main_subject', pk=post.pk)
     else:
         form = PostForm()
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
-    return render(request, 'fs4pso/write.html', {'subjects': subjects})
+    return render(request, 'fs4pso/write.html', {'form': form})
 
 def main_subject(request):
     subjects = Subject.objects.filter(created_date__lte=timezone.now()).order_by('created_date')

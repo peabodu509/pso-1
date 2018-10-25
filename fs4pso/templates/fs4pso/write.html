@@ -36,8 +36,10 @@
 <!-- Stats Gallery Section -->
 
 		<div class="gallery">
-			<form method="POST" class="post-form">{% csrf_token %}
-				<div class="form-group col-md-3">
+			<form method="POST" class="post-form">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<!--<div class="form-group col-md-3">
 					<label>이름</label>
 					<textarea class="form-control" rows="1"></textarea>
   				</div>
@@ -64,8 +66,9 @@
 					<label>하고싶은 말</label>
 					<textarea class="form-control" rows="5"></textarea>
   				</div>
-				<hr>
-					<button type="submit" class="save btn btn-primary" style="margin-bottom: 1em">제출</button>
+				<hr>-->
+				<button type="submit" class="save btn btn-primary" style="margin-bottom: 1em">제출</button>
+			</form>
 	  </div>
 <!-- Copyrights Section -->
 		<div class="modal-footer">(C) PSO - 김민영, 김정석, 김태윤, 노현기, 선재헌, 이동현, 이민준</div>
